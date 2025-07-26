@@ -56,7 +56,7 @@ A mesma lógica do desafio original foi mantida, apenas renomeando e adaptando a
 
 *Print do terminal executando o `Main`*
 
-![Demonstração do Projeto](br/com/dio/challenge/dominio/img.png)
+![Demonstração do Projeto](src/br/com/dio/challenge/dominio/img.png)
 
 
 ## 🛠️ Tecnologias <a name="-tecnologias"></a>
