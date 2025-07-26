@@ -9,9 +9,9 @@
 <h1 align="center">📝 To-Do List com POO em Java 📝</h1>
 
 <p align="center">
-  Um projeto para colocar em prática os 4 pilares da Programação Orientada a Objetos, adaptando um desafio da <strong><a href="https://web.digitalinnovation.one/">Digital Innovation One</a></strong> para um contexto de lista de tarefas pessoal.
-</p>
-
+  Um projeto para colocar em prática os 4 pilares da Programação Orientada a Objetos, adaptando um desafio da <strong><a href="https://web.digitalinnovation.one/">Digital Innovation One</a></strong> para um contexto de lista de tarefas pessoal. 
+</p> 
+<br>
 
 
 <p align="center">
@@ -23,15 +23,15 @@
   <a href="#-autor">Autor</a>
 </p>
 
-
+<br><br>
 ## 🌟 Sobre o Desafio <a name="-sobre-o-desafio"></a>
 
 O desafio original da DIO, **"Aprenda na Prática Programação Orientada a Objetos"**, teve como objetivo principal a aplicação dos quatro pilares da POO em Java: ***Abstração, Encapsulamento, Herança e Polimorfismo***. O cenário proposto envolvia a modelagem de um ecossistema de Bootcamps e Devs, permitindo praticar esses conceitos essenciais.
-
+<br><br>
 
 > 🔗 Você pode conferir o repositório do desafio original [aqui](https://github.com/cami-la/desafio-poo-dio).
 
-
+<br>
 
 ## 💡 Minha Adaptação: Sistema de To-Do List Pessoal <a name="-minha-adaptação"></a>
 
