@@ -1,64 +1,90 @@
-import br.com.dio.challenge.dominio.Bootcamp;
-import br.com.dio.challenge.dominio.Curso;
-import br.com.dio.challenge.dominio.Dev;
-import br.com.dio.challenge.dominio.Mentoria;
+import br.com.dio.challenge.dominio.Notebook;
+import br.com.dio.challenge.dominio.Study;
+import br.com.dio.challenge.dominio.Workout;
+import br.com.dio.challenge.dominio.User;
+import br.com.dio.challenge.dominio.Reading;
 
-import java.time.LocalDate;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Curso curso1 = new Curso();
-        curso1.setTitulo("curso java");
-        curso1.setDescricao("descrição curso java");
-        curso1.setCargaHoraria(8);
 
-        Curso curso2 = new Curso();
-        curso2.setTitulo("curso js");
-        curso2.setDescricao("descrição curso js");
-        curso2.setCargaHoraria(4);
+        Workout treino1 = new Workout();
+        treino1.setTitle("Treino de Musculação -> Leg Day");
+        treino1.setDescription("squat, " + "deadlift, " + "leg press, " + "leg extension");
+        treino1.setDurationTime(80);
 
-        Mentoria mentoria = new Mentoria();
-        mentoria.setTitulo("mentoria de java");
-        mentoria.setDescricao("descrição mentoria java");
-        mentoria.setData(LocalDate.now());
+        Workout cardio1 = new Workout();
+        cardio1.setTitle("Cardio");
+        cardio1.setDescription("Bike");
+        cardio1.setDurationTime(20);
 
-        /*System.out.println(curso1);
-        System.out.println(curso2);
-        System.out.println(mentoria);*/
+        Workout cardio2 = new Workout();
+        cardio2.setTitle("Cardio");
+        cardio2.setDescription("Caminhada");
+        cardio2.setDurationTime(60);
 
-        Bootcamp bootcamp = new Bootcamp();
-        bootcamp.setNome("Bootcamp Java Developer");
-        bootcamp.setDescricao("Descrição Bootcamp Java Developer");
-        bootcamp.getConteudos().add(curso1);
-        bootcamp.getConteudos().add(curso2);
-        bootcamp.getConteudos().add(mentoria);
+        Reading leitura1 = new Reading();
+        leitura1.setTitle("Flores para Algernon");
+        leitura1.setDescription("Capítulos 1 a 3");
+        leitura1.setNumPages(75);
 
-        Dev devSyb = new Dev();
-        devSyb.setNome("Sybilla");
-        devSyb.inscreverBootcamp(bootcamp);
-        System.out.println("Conteúdos Inscritos Sybilla:" + devSyb.getConteudosInscritos());
-        devSyb.progredir();
-        devSyb.progredir();
+        Study estudo1 = new Study();
+        estudo1.setTitle("Estudar Spring Boot");
+        estudo1.setDescription("Assistir aulas e fazer exercícios");
+        estudo1.setStudyHours(2);
+
+        Notebook todofriday = new Notebook();
+        todofriday.setName("To-do na sexta-feira.");
+        todofriday.setDescription("Metas de atividades para a sexta-feira.");
+        todofriday.getTasks().add(treino1);
+        todofriday.getTasks().add(leitura1);
+        todofriday.getTasks().add(estudo1);
+        todofriday.getTasks().add(cardio1);
+
+        Notebook todosunday = new Notebook();
+        todosunday.setName("To-do no domingo.");
+        todosunday.setDescription("Metas de atividades para o domingo.");
+        todosunday.getTasks().add(estudo1);
+        todosunday.getTasks().add(cardio2);
+
+        User userSyb = new User();
+        userSyb.setName("Sybilla");
+        userSyb.notebookUser(todofriday);
+        System.out.println("Atividades Pendentes Sybilla: " + userSyb.getPendingTask());
+        userSyb.completeTask(treino1);
+        userSyb.completeTask(leitura1);
         System.out.println("-");
-        System.out.println("Conteúdos Inscritos Sybilla:" + devSyb.getConteudosInscritos());
-        System.out.println("Conteúdos Concluídos Sybilla:" + devSyb.getConteudosConcluidos());
-        System.out.println("XP:" + devSyb.calcularTotalXp());
+        System.out.println("Atividades Pendentes Sybilla: " + userSyb.getPendingTask());
+        System.out.println("Atividades Concluídas Sybilla: " + userSyb.getCompletedTask());
+        System.out.println("Total de Pontos da Sybilla: " + userSyb.calculatePoints());
 
         System.out.println("-------");
 
-        Dev devArthur = new Dev();
-        devArthur.setNome("Arthur");
-        devArthur.inscreverBootcamp(bootcamp);
-        System.out.println("Conteúdos Inscritos Arthur:" + devArthur.getConteudosInscritos());
-        devArthur.progredir();
-        devArthur.progredir();
-        devArthur.progredir();
+        User userRafa = new User();
+        userRafa.setName("Rafael");
+        userRafa.notebookUser(todofriday);
+        System.out.println("Atividades Pendentes Rafael: " + userRafa.getPendingTask());
+        userRafa.completeTask(treino1);
+        userRafa.completeTask(leitura1);
+        userRafa.completeTask(cardio1);
+        userRafa.completeTask(estudo1);
         System.out.println("-");
-        System.out.println("Conteúdos Inscritos Arthur:" + devArthur.getConteudosInscritos());
-        System.out.println("Conteúdos Concluidos Arthur:" + devArthur.getConteudosConcluidos());
-        System.out.println("XP:" + devArthur.calcularTotalXp());
+        System.out.println("Atividades Pendentes Rafael: " + userRafa.getPendingTask());
+        System.out.println("Atividades Concluídas Rafael: " + userRafa.getCompletedTask());
+        System.out.println("Total de Pontos do Rafael: " + userRafa.calculatePoints());
 
+        System.out.println("-------");
+
+        User userGab = new User();
+        userGab.setName("Gabriel");
+        userGab.notebookUser(todosunday);
+        System.out.println("Atividades Pendentes Gabriel: " + userGab.getPendingTask());
+        userGab.completeTask(estudo1);
+        userGab.completeTask(leitura1);
+        userGab.completeTask(cardio2);
+        System.out.println("-");
+        System.out.println("Atividades Pendentes Gabriel: " + userGab.getPendingTask());
+        System.out.println("Atividades Concluídas Gabriel: " + userGab.getCompletedTask());
+        System.out.println("Total de Pontos do Gabriel: " + userGab.calculatePoints());
     }
 }
